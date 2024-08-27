@@ -53,7 +53,7 @@ async function handleStripeWebhook(body: any) {
 	const user = body.data?.object?.metadata?.userId;
 	const meta = body.data?.object?.metadata;
 	const stripe_invoice = body.data?.object?.invoice;
-	const type = body.type;
+	const type = body.type as EventName;
 
 	// console.log everything above REMOVE BEFORE PRODUCTION.
 	console.log("mode --->", mode);
